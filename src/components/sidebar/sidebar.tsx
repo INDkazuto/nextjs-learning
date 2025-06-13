@@ -1,30 +1,38 @@
-"use client"
-import { Menu } from 'antd'
-import React from 'react'
-const keNum = Math.random()
+"use client";
+
+import { Menu } from "antd";
+import Link from "next/link";
+import React from "react";
+
 const Sidebar = () => {
   return (
-    <div>
-
-      
+    <div
+      style={{
+        width: 240,
+        left: 0,
+        height: "100vh",
+        background: "#fff",
+        position: "fixed",
+      }}
+    >
       <Menu>
-            <Menu.ItemGroup>
-                  <Menu.Item>
-                        Home
-                  </Menu.Item>
-                  <Menu.Item>
-                        Product
-                  </Menu.Item>
-                  <Menu.Item>
-                        About
-                  </Menu.Item>
-                  <Menu.Item key={keNum}>
-                        Contact
-                  </Menu.Item>
-            </Menu.ItemGroup>
+        <Menu.ItemGroup >
+          <Link href={"/home"}>
+            <Menu.Item>Home</Menu.Item>
+          </Link>
+          <Link href={"/product"}>
+            <Menu.Item>Product</Menu.Item>
+          </Link>
+           <Link href={"/about"}>
+            <Menu.Item>About</Menu.Item>
+          </Link>
+           <Link href={"/contact"}>
+            <Menu.Item>Contact</Menu.Item>
+          </Link>
+        </Menu.ItemGroup>
       </Menu>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
